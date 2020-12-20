@@ -69,7 +69,7 @@ Rails.application.configure do
   host = 'shrouded-shore-25478.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :addresses      => 'smtp.mailgun.com',
+    :addresses      => 'smtp.mailgun.org',
     :port           => '587',
     :authentication => :plain,
     :user_name      => ENV['MAILGUN_USERNAME'],
