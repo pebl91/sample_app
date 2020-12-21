@@ -72,11 +72,12 @@ Rails.application.configure do
     :addresses      => 'smtp.mailgun.org',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => 'postmaster@sandbox3ce70c4bea954c47834abb44939d50e3.mailgun.org',
-    :password       => '11483f84c18fc95cb32d43f5a215239b-b6190e87-a95aedf9',
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN,'],
+    :password       => ENV['MAILGUN_SMTP_LOGIN,'],
     :domain         => 'heroku.com',
     :enabel_starttls_auto => true
-    } 
+} 
+ActionMailer::Base.delivery_method = :smtp
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
