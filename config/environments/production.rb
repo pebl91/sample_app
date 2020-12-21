@@ -64,26 +64,19 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
- #  config.action_mailer.raise_delivery_errors = true
- # config.action_mailer.delivery_method = :smtp
- # host = 'fierce-savannah-15313.herokuapp.com'
- # config.action_mailer.default_url_options = { host: host }
-#  ActionMailer::Base.smtp_settings = {
-#    :addresses      => 'smtp.mailgun.org',
-#    :port           => '587',
- #   :authentication => :plain,
- #   :user_name      => ENV['SMTP_USER_NAME'],
-#    :password       => ENV['SMTP_PASSWORD'],
- #   :domain         => 'heroku.com',
- ##   :enabel_starttls_auto => true
- # } 
-
-config.action_mailer.delivery_method = :mailgun
-config.action_mailer.mailgun_settings = {
-  api_key: ENV['MAILGUN_API_KEY'],
-  domain: ENV['DOMAIN_NAME'],
-  # api_host: 'api.eu.mailgun.net'  # Uncomment this line for EU region domains
-}
+   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  host = 'fierce-savannah-15313.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host }
+  ActionMailer::Base.smtp_settings = {
+    :addresses      => 'smtp.mailgun.org',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => 'postmaster@sandbox3ce70c4bea954c47834abb44939d50e3.mailgun.org',
+    :password       => '11483f84c18fc95cb32d43f5a215239b-b6190e87-a95aedf9',
+    :domain         => 'heroku.com',
+    :enabel_starttls_auto => true
+} 
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
