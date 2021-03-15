@@ -5,10 +5,9 @@ test:
 local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
-
 amazon:
   service: S3
-  access_key_id: <%= Rails.application.credentials.dig(:aws, :AKIAR6LFQF5G64XJHGGF) %>
-  secret_access_key: <%= Rails.application.credentials.dig(:aws, :64oQp0F8Lq5ed68/+rdXZ/+xvH4uJMWtRbp2kUb1) %>
-  region: eu-central-1
-  bucket: elasticbeanstalk-eu-central-1-133893730125
+  access_key_id:     <%= ENV['AKIAR6LFQF5G64XJHGGF'] %>
+  secret_access_key: <%= ENV['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'] %>
+  region:            <%= ENV['eu-central-1'] %>
+  bucket:            <%= ENV['elasticbeanstalk-eu-central-1-133893730125'] %>
